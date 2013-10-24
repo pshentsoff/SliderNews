@@ -2,8 +2,8 @@
 Contributors: pshentsoff
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FGRFBSFEW5V3Y
 Tags: slider, multi-slider, jQuery
-Version: 0.4.1
-Stable tag: 0.4.1
+Version: 0.4.2
+Stable tag: 0.4.2
 Requires at least: 3.0.1
 Tested up to: 3.6.1
 License: Apache License, Version 2.0
