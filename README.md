@@ -1,7 +1,7 @@
 SliderNews
 ==========
 
-Wordpress plugin for manage jQuery-based slider JSliderNews, from LoF (http://landofcoder.com)
+Wordpress plugin for manage jQuery-based slider JSliderNews, from LoF (http://landofcoder.com).
 With this plugin you can easy manage any count of sliders on your pages. It allow you make easy changes with showed images, thumbs, titles and descriptions of slider items.
 ATTENTION: Due to using same not unique id attributes - more than one slider on one page does not work properly. In other words - one page can contain not more than one slider.
 
