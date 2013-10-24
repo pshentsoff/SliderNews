@@ -5,15 +5,11 @@ Wordpress plugin for manage jQuery-based slider JSliderNews, from LoF (http://la
 With this plugin you can easy manage any count of sliders on your pages. It allow you make easy changes with showed images, thumbs, titles and descriptions of slider items.
 ATTENTION: Due to using same not unique id attributes - more than one slider on one page does not work properly. In other words - one page can contain not more than one slider.
 
-Contributors: pshentsoff
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FGRFBSFEW5V3Y
-Tags: slider, multi-slider, jQuery
-Version: 0.4.2
-Stable tag: 0.4.2
-Requires at least: 3.0.1
-Tested up to: 3.6.1
-License: Apache License, Version 2.0
-License URI: http://www.apache.org/licenses/LICENSE-2.0.html
+- Contributors: pshentsoff
+- Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FGRFBSFEW5V3Y
+- Tags: slider, multi-slider, jQuery
+- License: Apache License, Version 2.0
+- License URI: http://www.apache.org/licenses/LICENSE-2.0.html
 
 == Installation ==
 
