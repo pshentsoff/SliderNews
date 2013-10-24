@@ -1,7 +1,7 @@
 SliderNews
 ==========
 
-Plugin for manage jQuery-based slider JSliderNews, from LoF (http://landofcoder.com)
+Wordpress plugin for manage jQuery-based slider JSliderNews, from LoF (http://landofcoder.com)
 With this plugin you can easy manage any count of sliders on your pages. It allow you make easy changes with showed images, thumbs, titles and descriptions of slider items.
 ATTENTION: Due to using same not unique id attributes - more than one slider on one page does not work properly. In other words - one page can contain not more than one slider.
 
@@ -20,7 +20,7 @@ License URI: http://www.apache.org/licenses/LICENSE-2.0.html
 1. Upload plugin folder to the '/wp-content/plugins/' directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Create new slider, add images, thumbs texts and links. Give it machine-readable
-  name (e.g. 'slider_name')
+name (e.g. 'slider_name')
 4. Place `<?php get_slidernews('slider_name'); ?>` in your template file
 
 == Screenshots ==
