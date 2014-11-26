@@ -38,6 +38,7 @@ define('SLIDERNEWS_TABLE', 'slidernews');
 define('SLIDERNEWS_ITEMS_TABLE', 'slidernews_items');
 define('SLIDERNEWS_NAME_MAXLENGTH', 128);
 define('SLIDERNEWS_CSSFILE_LENGTH', 256);
+define('SLIDERNEWS_CSSFILE_DEFAULT', 'fitness-hall-red.css');
 
 define('SLIDERNEWS_ITEM_TITLE_LENGTH', 25);
 define('SLIDERNEWS_ITEM_DESCRIPTION_LENGTH', 66);

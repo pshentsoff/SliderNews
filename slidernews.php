@@ -3,13 +3,13 @@
 Plugin Name: SliderNews
 Plugin URI: http://blog.pshentsoff.ru/wp-plugins/slidernews
 Description: Plugin for JSliderNews, JQuery-based slider from LoF (http://landofcoder.com) 
-Version: 0.4.2	
+Version: 0.4.3
 Author: Vadim Pshentsov 
 Author URI: http://blog.pshentsoff.ru/
 Wordpress version supported: 3.4 and above
 */  
 
-/*  Copyright 2012  Vadim Pshentsov  (email : pshentsoff@yandex.ru)
+/*  Copyright 2012, 2014  Vadim Pshentsov  (email : pshentsoff@yandex.ru)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -168,20 +168,32 @@ function slidernews_enqueue_scripts() {
 	wp_enqueue_script( 'slidernews_animtune_js', slidernews_plugin_url( 'js/animtune.js' ),
 		array('jquery'), SLIDERNEWS_VERSION, false);
 }
-add_action( 'init', 'slidernews_enqueue_scripts' );
+add_action( 'wp_enqueue_scripts', 'slidernews_enqueue_scripts' );
 
 
-function slidernews_enqueue_styles() {
+function slidernews_enqueue_styles($enqueue_style = null) {
 
   global $slidernews;
-  
-  if(empty($slidernews['enqueue_style'])) return;
-  $style_name = substr($slidernews['enqueue_style'], 0, strpos($slidernews['enqueue_style'], '.css'));
-  
-  wp_enqueue_style( 'slidernews-'.$style_name, slidernews_plugin_url( 'css/'.$slidernews['enqueue_style'] ),
-		false, SLIDERNEWS_VERSION, 'screen');
+
+  $enqueue_style = isset($enqueue_style) ? $enqueue_style : $slidernews['enqueue_style'];
+
+  if(!isset($enqueue_style) || empty($enqueue_style)) {
+    $slider_settings = get_slidernews_settings($slidernews['id']);
+    if(isset($slider_settings['css_file']) && !empty($slider_settings['css_file'])) {
+      $enqueue_style = $slider_settings['css_file'];
+    } else {
+      $enqueue_style = SLIDERNEWS_CSSFILE_DEFAULT;
+    }
+  }
+
+  $style_name = substr($enqueue_style, 0, strpos($enqueue_style, '.css'));
+  $style_fileurl = slidernews_plugin_url( 'css/'.$enqueue_style );
+
+//  wp_enqueue_style( 'slidernews-'.$style_name, $style_fileurl,
+//		false, SLIDERNEWS_VERSION, 'screen');
+  wp_enqueue_style( 'slidernews-'.$style_name, $style_fileurl);
 }
-//add_action('init', 'slidernews_enqueue_styles');
+add_action('wp_enqueue_scripts', 'slidernews_enqueue_styles');
 
 /**
  * Print slider HTML code
@@ -190,6 +202,7 @@ function slidernews_enqueue_styles() {
  * @return - no return  
  **/ 
 function get_slidernews($slider_name = 'sample', $in_return = FALSE) {
+
   global $slidernews;
   
   $slider_id = get_slidernews_id($slider_name);
@@ -210,10 +223,10 @@ function get_slidernews($slider_name = 'sample', $in_return = FALSE) {
   
   $slider_settings = get_slidernews_settings($slider_id); 
   $slider_items = get_slidernews_carousel_items($slider_id);
-  
-  if(!empty($slider_settings['css_file']) && !($slidernews['enqueue_style'] == $slider_settings['css_file'])) {
+
+  if(!empty($slider_settings['css_file']) && ($slidernews['enqueue_style'] != $slider_settings['css_file'])) {
     $slidernews['enqueue_style'] = $slider_settings['css_file'];
-    slidernews_enqueue_styles();
+    slidernews_enqueue_styles($slider_settings['css_file']);
     }
   ?>
 	<div class="preload"><div></div></div>

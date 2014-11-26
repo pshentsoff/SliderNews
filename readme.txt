@@ -1,15 +1,15 @@
 === SliderNews ===
 Contributors: pshentsoff
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FGRFBSFEW5V3Y
-Tags: slider, multi-slider, jQuery
-Version: 0.4.2
-Stable tag: 0.4.2
+Donate link: http://blog.pshentsoff.ru/donate/
+Tags: slider, multi-slider, JQuery
+Version: 0.4.3
+Stable tag: 0.4.3
 Requires at least: 3.0.1
-Tested up to: 3.6.1
-License: Apache License, Version 2.0
-License URI: http://www.apache.org/licenses/LICENSE-2.0.html
+Tested up to: 3.4.2
+License: GPLv2 or later
+License URI: http://opensource.org/licenses/gpl-2.0.php
 
-Plugin for manage jQuery-based slider JSliderNews, from LoF (http://landofcoder.com)
+Plugin for manage JQuery-based slider JSliderNews, from LoF (http://landofcoder.com)
 
 == Description ==
 
@@ -35,6 +35,10 @@ ATTENTION: Due to using same not unique id attributes - more than one slider on 
 6. Other slider with another items and css on the same site.
 
 == Changelog ==
+
+= 0.4.3 =
+
+- temporary fix bug with no styles included to output. At least default css will be enqueue (see value of constant SLIDERNEWS_CSSFILE_DEFAULT at slidernews-settings.php)
 
 = 0.4.2 =
 

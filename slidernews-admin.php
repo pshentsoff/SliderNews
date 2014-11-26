@@ -269,11 +269,6 @@ if($sliders) {
 </div>
 <?php
   
-  //DEBUG:
-  #echo '<textarea rows=30 cols=180>';
-  #echo print_r($_POST);
-  #echo '</textarea>'; 
-  
 }
 
 function slidernews_edit_slider_settings($slider_id) {
